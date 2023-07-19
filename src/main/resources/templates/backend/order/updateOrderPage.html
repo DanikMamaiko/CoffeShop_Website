@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form th:action="updateOrder" th:method="POST" th:object="${order}">
+
+        <label for="id">ID</label>
+        <input type="text" th:field="*{id}" id="id" readonly/>
+            <br><br>
+        <label for="weight">Вес</label>
+        <input type="text" th:field="*{weight}" id="weight" />
+        <div style="color:red" th:if="${#fields.hasErrors('weight')}" th:errors="*{weight}">weight Error</div>
+            <br><br>
+        <label for="filling">Начинка</label>
+        <input type="text" th:field="*{filling}" id="filling" />
+        <div style="color:red" th:if="${#fields.hasErrors('filling')}" th:errors="*{filling}">filling Error</div>
+            <br><br>
+        <label for="design">Дизайн</label>
+        <input type="text" th:field="*{design}" id="design" />
+        <div style="color:red" th:if="${#fields.hasErrors('design')}" th:errors="*{design}">design Error</div>
+            <br><br>
+        <label for="consumer">Клиент</label>
+        <input type="text" th:field="*{consumer}" id="consumer" />
+        <div style="color:red" th:if="${#fields.hasErrors('consumer')}" th:errors="*{consumer}">Age Error</div>
+            <br><br>
+
+        <input type="submit" value="Изменить заказ" />
+    </form>
+
+</body>
+</html>

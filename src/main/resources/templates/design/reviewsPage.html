@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #ff69b4;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav {
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+      }
+
+      nav a {
+        color: #333;
+        text-decoration: none;
+        padding: 10px;
+      }
+
+      nav a:hover {
+        background-color: #333;
+        color: #fff;
+      }
+
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+      }
+
+      .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        overflow: hidden;
+        width: 30%;
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card .info {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 32px;
+        margin: 0 0 10px;
+        text-align: center;
+      }
+
+      h3 {
+        font-size: 24px;
+        margin: 0 0 10px;
+      }
+
+      p {
+        font-size: 18px;
+        margin: 0 0 10px;
+      }
+
+      .review-text {
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+
+      .rating {
+        color: #ff69b4;
+        font-size: 24px;
+      }
+
+      footer {
+        background-color: #f5f5f5;
+        padding: 10px;
+        text-align: center;
+      }
+	</style>
+</head>
+<body>
+
+  <header>
+    <h1><a href="/">На главную</a></h1>
+
+  </header>
+  <section id="reviews">
+    <h2 align="center">Отзывы</h2>
+    <div class="card">
+      <img src="vini.png" alt="Аватар пользователя" />
+      <div class="info">
+        <h3>Александр</h3>
+        <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9734;</p>
+      </div>
+      <p class="review-text">
+        Невероятно вкусный кофе! Я попробовал их капучино, и это было лучшее капучино, которое я когда-либо пробовал!
+      </p>
+    </div>
+    <div class="card">
+      <img src="pig.png" alt="Аватар пользователя" />
+      <div class="info">
+        <h3>Ольга</h3>
+        <p class="rating">&#9733; &#9733; &#9733; &#9734; &#9734;</p>
+      </div>
+      <p class="review-text">
+        Я посетила эту кофейню с подругами на выходных, и мне очень понравилась атмосфера. Кофе был тоже довольно хорошим, хотя мне кажется, что они могли бы предложить больше веганских опций.
+      </p>
+    </div>
+    <div class="card">
+      <img src="ia.jpg" alt="Аватар пользователя" />
+      <div class="info">
+        <h3>Иван</h3>
+        <p class="rating">&#9733; &#9733; &#9734; &#9734; &#9734;</p>
+      </div>
+      <p class="review-text">
+        Я был разочарован своим опытом в этой кофейне. Кофе был слишком горячим и не имел хорошего вкуса. Также не было достаточно места для сидения, и обстановка была слишком шумной для того, чтобы я смог сосредоточить свои мысли. Я бы не посетил эту кофейню еще раз.
+      </p>
+    </div>
+  </section>
+  <footer>
+    <p>© 2023 Кофейня</p>
+  </footer>
+
+</body>
+</html>

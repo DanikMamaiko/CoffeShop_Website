@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+
+    <form th:action="saveOrder" th:method="POST" th:object="${order}">
+
+        <label for="weight">Вес</label>
+        <input type="text" th:field="*{weight}" id="weight" />
+            <br><br>
+        <label for="filling">Начинка</label>
+        <input type="text" th:field="*{filling}" id="filling" />
+            <br><br>
+        <label for="design">Дизайн</label>
+        <input type="text" th:field="*{design}" id="design" />
+            <br><br>
+        <label for="consumer">Клиент</label>
+        <input type="text" th:field="*{consumer}" id="consumer" th:text="${consumerId}" readonly />
+            <br><br>
+
+        <input type="submit" value="Добавить заказ" />
+    </form>
+
+</body>
+</html>

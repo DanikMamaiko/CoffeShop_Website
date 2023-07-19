@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Consumers</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #FFA500, #FFFF00);
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #FFA500;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #FFFF00;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        input[type="button"] {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #FFA500;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #FF8C00;
+        }
+    </style>
+
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Вес торта</th>
+            <th>Начинка</th>
+            <th>Дизайн</th>
+            <th>Клиент(id)</th>
+            <th>Клиент</th>
+        </tr>
+        <tr th:each="order : ${allOrders}">
+            <td th:text="${order.getWeight()}"></td>
+            <td th:text="${order.getFilling()}"></td>
+            <td th:text="${order.getDesign()}"></td>
+            <td th:text="${order.getConsumer().getId()}"></td>
+            <td>
+                <a th:href="@{|/getConsumer/${order.getConsumer().getId()}|}" th:text="Просмотреть">Просмотреть</a>
+            </td>
+        </tr>
+
+    </table>
+
+    <input type="button" value="Добавить новый заказ" onclick="window.location.href='addNewOrder'" />
+    <br><br>
+    <input type="button" value="Вернуться на главную" onclick="window.location.href='/'" />
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Информация о пользователе:</h1>
+<br>
+
+<table border="1px">
+  <tr>
+    <td th:text="${consumer.getName()}"></td>
+    <td th:text="${consumer.getSurname()}"></td>
+    <td th:text="${consumer.getSex()}"></td>
+    <td th:text="${consumer.getAge()}"></td>
+    <td th:text="${consumer.getPhoneNumber()}"></td>
+  </tr>
+</table>
+
+<br><br>
+<input type="button" value="Вернуться на главную" onclick="window.location.href='/'" />
+
+</body>
+</html>
