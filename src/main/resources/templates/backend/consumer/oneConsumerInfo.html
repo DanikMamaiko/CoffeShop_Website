@@ -3,20 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+        input[type="button"] {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-
 <h1>Информация о пользователе:</h1>
 <br>
 
 <table border="1px">
-  <tr>
-    <td th:text="${consumer.getName()}"></td>
-    <td th:text="${consumer.getSurname()}"></td>
-    <td th:text="${consumer.getSex()}"></td>
-    <td th:text="${consumer.getAge()}"></td>
-    <td th:text="${consumer.getPhoneNumber()}"></td>
-  </tr>
+    <tr>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Пол</th>
+        <th>Возраст</th>
+        <th>Номер телефона</th>
+    </tr>
+    <tr>
+        <td th:text="${consumer.getName()}"></td>
+        <td th:text="${consumer.getSurname()}"></td>
+        <td th:text="${consumer.getSex()}"></td>
+        <td th:text="${consumer.getAge()}"></td>
+        <td th:text="${consumer.getPhoneNumber()}"></td>
+    </tr>
 </table>
 
 <br><br>
