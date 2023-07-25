@@ -2,7 +2,9 @@ package com.dessert.project.dessert.Controllers.mvc;
 
 import com.dessert.project.dessert.Entities.Consumers;
 import com.dessert.project.dessert.Entities.Orders;
+import com.dessert.project.dessert.Service.impl.ServiceConsumerImpl;
 import com.dessert.project.dessert.Service.impl.ServiceOrderImpl;
+import com.dessert.project.dessert.Service.impl.UserDetailsServiceImpl;
 import com.dessert.project.dessert.security.UserDetailsImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.security.auth.login.AccountNotFoundException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -24,6 +27,9 @@ public class OrdersController {
 
     @Autowired
     private ServiceOrderImpl serviceOrderImpl;
+
+    @Autowired
+    private ServiceConsumerImpl serviceConsumer;
 
     @GetMapping("/allOrders")
     public String ordersPage(Model model){
@@ -51,6 +57,12 @@ public class OrdersController {
 
         model.addAttribute("order", order);
 
+        List <String> fillingList = new ArrayList<>();
+        fillingList.add("Красный бархат");
+        fillingList.add("Медовик");
+        fillingList.add("Сникерс");
+
+        model.addAttribute("fillingList", fillingList);
 
         return "backend/order/orderFormPage";
     }
@@ -72,6 +84,14 @@ public class OrdersController {
     public String updateOrder(@PathVariable("id") int id, Model model){
         Orders order = serviceOrderImpl.getOrder(id);
         model.addAttribute("order", order);
+
+        List <String> fillingList = new ArrayList<>();
+        fillingList.add("Красный бархат");
+        fillingList.add("Медовик");
+        fillingList.add("Сникерс");
+
+        model.addAttribute("fillingList", fillingList);
+
         return "backend/order/updateOrderPage";
     }
 

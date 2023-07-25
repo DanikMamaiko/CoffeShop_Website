@@ -51,11 +51,14 @@
 </head>
 <body>
 <form th:action="saveOrder" th:method="POST" th:object="${order}">
+
     <label for="weight">Вес:</label>
     <input type="text" th:field="*{weight}" id="weight" />
     <br><br>
     <label for="filling">Начинка:</label>
-    <input type="text" th:field="*{filling}" id="filling" />
+    <select name="filling" id="filling">
+        <option th:each="fill : ${fillingList}" th:text="${fill}"></option>
+    </select>
     <br><br>
     <label for="design">Дизайн:</label>
     <input type="text" th:field="*{design}" id="design" />
@@ -63,6 +66,10 @@
     <label for="consumer">Клиент:</label>
     <input type="text" th:field="*{consumer}" id="consumer" readonly />
     <br><br>
+
+
+
+
     <input type="submit" value="Добавить заказ" />
 </form>
 </body>

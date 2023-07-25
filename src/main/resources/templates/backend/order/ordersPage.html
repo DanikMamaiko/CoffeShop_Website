@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Consumers</title>
@@ -59,6 +59,7 @@
             <th>Начинка</th>
             <th>Дизайн</th>
             <th>Клиент(id)</th>
+            <th>Изменить заказ</th>
             <th>Клиент(инфо)</th>
         </tr>
         <tr th:each="order : ${allOrders}">
@@ -66,6 +67,9 @@
             <td th:text="${order.getFilling()}"></td>
             <td th:text="${order.getDesign()}"></td>
             <td th:text="${order.getConsumer().getId()}"></td>
+            <td>
+                <a th:href="@{|/updateOrder/${order.getId()}|}">Изменить заказ</a>
+            </td>
             <td>
                 <a th:href="@{|/getConsumer/${order.getConsumer().getId()}|}" th:text="Просмотреть">Просмотреть</a>
             </td>
