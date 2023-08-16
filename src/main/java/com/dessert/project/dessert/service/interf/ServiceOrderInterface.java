@@ -1,7 +1,6 @@
-package com.dessert.project.dessert.Service.interf;
+package com.dessert.project.dessert.service.interf;
 
-import com.dessert.project.dessert.Entities.Consumers;
-import com.dessert.project.dessert.Entities.Orders;
+import com.dessert.project.dessert.entities.Orders;
 
 import java.util.List;
 

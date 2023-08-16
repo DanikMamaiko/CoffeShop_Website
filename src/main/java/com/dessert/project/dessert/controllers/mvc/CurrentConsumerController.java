@@ -1,6 +1,6 @@
-package com.dessert.project.dessert.Controllers.mvc;
+package com.dessert.project.dessert.controllers.mvc;
 
-import com.dessert.project.dessert.Entities.Consumers;
+import com.dessert.project.dessert.entities.Consumers;
 import com.dessert.project.dessert.security.UserDetailsImpl;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

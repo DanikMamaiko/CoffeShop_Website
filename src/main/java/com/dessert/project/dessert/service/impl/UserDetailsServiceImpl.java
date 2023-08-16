@@ -1,9 +1,8 @@
-package com.dessert.project.dessert.Service.impl;
+package com.dessert.project.dessert.service.impl;
 
 import com.dessert.project.dessert.security.UserDetailsImpl;
 import com.dessert.project.dessert.DAO.ConsumerRepository;
-import com.dessert.project.dessert.Entities.Consumers;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dessert.project.dessert.entities.Consumers;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -14,8 +13,10 @@ import java.util.Optional;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
     private ConsumerRepository consumerRepository;
+    public UserDetailsServiceImpl(ConsumerRepository consumerRepository){
+        this.consumerRepository = consumerRepository;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

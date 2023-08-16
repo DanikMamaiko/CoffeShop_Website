@@ -1,9 +1,7 @@
-package com.dessert.project.dessert.Entities;
+package com.dessert.project.dessert.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -53,5 +51,8 @@ public class Consumers {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}, mappedBy = "consumer")
     List<Orders> ordersList;
 
-
+    public Consumers(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
 }

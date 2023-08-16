@@ -1,8 +1,7 @@
-package com.dessert.project.dessert.Controllers.mvc;
+package com.dessert.project.dessert.controllers.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class DesignController {

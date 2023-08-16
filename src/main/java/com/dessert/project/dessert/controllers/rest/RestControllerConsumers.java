@@ -1,18 +1,19 @@
-package com.dessert.project.dessert.Controllers.rest;
+package com.dessert.project.dessert.controllers.rest;
 
-import com.dessert.project.dessert.Entities.Consumers;
-import com.dessert.project.dessert.Service.impl.ServiceConsumerImpl;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dessert.project.dessert.entities.Consumers;
+import com.dessert.project.dessert.service.impl.ServiceConsumerImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
 @RequestMapping("/rest/api")
-public class RestController {
+public class RestControllerConsumers {
 
-    @Autowired
-    ServiceConsumerImpl serviceRepository;
+    private ServiceConsumerImpl serviceRepository;
+    public RestControllerConsumers(ServiceConsumerImpl serviceRepository) {
+        this.serviceRepository = serviceRepository;
+    }
 
     @GetMapping("/consumers")
     public List<Consumers> showAll(){

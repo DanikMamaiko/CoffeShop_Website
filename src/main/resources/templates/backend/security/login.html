@@ -39,7 +39,8 @@
             border-radius: 4px;
         }
 
-        input[type="submit"] {
+        input[type="submit"],
+        input[type="button"] { /* Общий стиль для кнопок */
             width: 100%;
             padding: 10px;
             background-color: #007bff;
@@ -49,7 +50,8 @@
             cursor: pointer;
         }
 
-        input[type="submit"]:hover {
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
             background-color: #0056b3;
         }
 
@@ -58,9 +60,6 @@
             text-align: center;
         }
 
-        .register-link {
-            text-align: center;
-        }
     </style>
 </head>
 <body>
@@ -82,12 +81,12 @@
   <div th:if="${param.error}" class="error-message">
     Authentication Error
   </div>
+
+
+  <input type="button" value="Registration" class="register-link" onclick="window.location.href='registration'" />
+
 </form>
 
-<br><br>
-<div class="register-link">
-  <input type="button" value="Зарегистрироваться" onclick="window.location.href='registration'" />
-</div>
 
 </body>
 </html>

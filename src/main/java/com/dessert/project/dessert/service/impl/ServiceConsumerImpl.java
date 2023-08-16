@@ -1,10 +1,9 @@
-package com.dessert.project.dessert.Service.impl;
+package com.dessert.project.dessert.service.impl;
 
 import com.dessert.project.dessert.DAO.ConsumerRepository;
-import com.dessert.project.dessert.Entities.Consumers;
-import com.dessert.project.dessert.Entities.Orders;
-import com.dessert.project.dessert.Service.interf.ServiceConsumerInterface;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dessert.project.dessert.entities.Consumers;
+import com.dessert.project.dessert.entities.Orders;
+import com.dessert.project.dessert.service.interf.ServiceConsumerInterface;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,8 +13,11 @@ import java.util.Optional;
 @Service
 public class ServiceConsumerImpl implements ServiceConsumerInterface {
 
-    @Autowired
-    ConsumerRepository consumerRepository;
+    private ConsumerRepository consumerRepository;
+    public ServiceConsumerImpl(ConsumerRepository consumerRepository)
+    {
+        this.consumerRepository = consumerRepository;
+    }
 
     @Override
     @Transactional

@@ -1,18 +1,13 @@
-package com.dessert.project.dessert.Controllers.mvc;
+package com.dessert.project.dessert.controllers.mvc;
 
-import com.dessert.project.dessert.Entities.Consumers;
-import com.dessert.project.dessert.Entities.Orders;
-import com.dessert.project.dessert.Service.impl.ServiceConsumerImpl;
-import com.dessert.project.dessert.Service.impl.ServiceOrderImpl;
-import com.dessert.project.dessert.Service.impl.UserDetailsServiceImpl;
+import com.dessert.project.dessert.entities.Consumers;
+import com.dessert.project.dessert.entities.Orders;
+import com.dessert.project.dessert.service.impl.ServiceOrderImpl;
 import com.dessert.project.dessert.security.UserDetailsImpl;
-import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,11 +20,10 @@ import java.util.List;
 @Controller
 public class OrdersController {
 
-    @Autowired
     private ServiceOrderImpl serviceOrderImpl;
-
-    @Autowired
-    private ServiceConsumerImpl serviceConsumer;
+    public OrdersController(ServiceOrderImpl serviceOrderImpl) {
+        this.serviceOrderImpl = serviceOrderImpl;
+    }
 
     @GetMapping("/allOrders")
     public String ordersPage(Model model){

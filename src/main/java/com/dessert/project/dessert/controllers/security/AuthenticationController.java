@@ -1,8 +1,8 @@
-package com.dessert.project.dessert.Controllers.security;
+package com.dessert.project.dessert.controllers.security;
 
 
-import com.dessert.project.dessert.Entities.Consumers;
-import com.dessert.project.dessert.Service.impl.ServiceConsumerImpl;
+import com.dessert.project.dessert.entities.Consumers;
+import com.dessert.project.dessert.service.impl.ServiceConsumerImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class AuthenticationController {
 
-    @Autowired
-    ServiceConsumerImpl consumerService;
+    private ServiceConsumerImpl consumerService;
+    public AuthenticationController(ServiceConsumerImpl consumerService) {
+        this.consumerService = consumerService;
+    }
 
     @GetMapping("/login")
     public String loginPage(){

@@ -1,10 +1,8 @@
-package com.dessert.project.dessert.Service.impl;
+package com.dessert.project.dessert.service.impl;
 
 import com.dessert.project.dessert.DAO.OrderRepository;
-import com.dessert.project.dessert.Entities.Consumers;
-import com.dessert.project.dessert.Entities.Orders;
-import com.dessert.project.dessert.Service.interf.ServiceOrderInterface;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.dessert.project.dessert.entities.Orders;
+import com.dessert.project.dessert.service.interf.ServiceOrderInterface;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,9 +12,10 @@ import java.util.Optional;
 @Service
 public class ServiceOrderImpl implements ServiceOrderInterface {
 
-    @Autowired
-    OrderRepository orderRepository;
-
+    private OrderRepository orderRepository;
+    public ServiceOrderImpl(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
 
     @Override
     @Transactional

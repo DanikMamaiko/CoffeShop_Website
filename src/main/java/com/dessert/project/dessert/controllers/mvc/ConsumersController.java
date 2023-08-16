@@ -1,7 +1,7 @@
-package com.dessert.project.dessert.Controllers.mvc;
+package com.dessert.project.dessert.controllers.mvc;
 
-import com.dessert.project.dessert.Entities.Consumers;
-import com.dessert.project.dessert.Service.impl.ServiceConsumerImpl;
+import com.dessert.project.dessert.entities.Consumers;
+import com.dessert.project.dessert.service.impl.ServiceConsumerImpl;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,8 +14,10 @@ import java.util.List;
 @Controller
 public class ConsumersController {
 
-    @Autowired
     private ServiceConsumerImpl serviceRepository;
+    public ConsumersController(ServiceConsumerImpl serviceRepository) {
+        this.serviceRepository = serviceRepository;
+    }
 
     @GetMapping("/allConsumers")
     public String consumersPage(Model model){

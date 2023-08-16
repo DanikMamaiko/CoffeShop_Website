@@ -1,6 +1,6 @@
 package com.dessert.project.dessert.security;
 
-import com.dessert.project.dessert.Entities.Consumers;
+import com.dessert.project.dessert.entities.Consumers;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;

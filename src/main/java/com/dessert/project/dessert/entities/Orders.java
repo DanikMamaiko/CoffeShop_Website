@@ -1,4 +1,4 @@
-package com.dessert.project.dessert.Entities;
+package com.dessert.project.dessert.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -33,6 +33,5 @@ public class Orders {
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name="client_id")
     private Consumers consumer;
-
 
 }
