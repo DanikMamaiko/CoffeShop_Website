@@ -51,7 +51,7 @@ public class Consumers {
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH}, mappedBy = "consumer")
     List<Orders> ordersList;
 
-    public Consumers(String name, String surname) {
+    public Consumers(int i, String name, String surname, String male, int i1) {
         this.name = name;
         this.surname = surname;
     }

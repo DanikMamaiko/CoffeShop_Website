@@ -23,7 +23,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/", "/login", "/registration", "/process-registration").permitAll()
+                        .requestMatchers("/", "/login", "/registration", "/process-registration", "/about", "/menu", "/reviews").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
