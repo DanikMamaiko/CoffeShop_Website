@@ -16,7 +16,6 @@ public class ConsumersController {
 
     @Autowired
     private ServiceConsumerImpl serviceRepository;
-
     @GetMapping("/allConsumers")
     public String consumersPage(Model model){
         List<Consumers> allConsumers = serviceRepository.getAllConsumers();
