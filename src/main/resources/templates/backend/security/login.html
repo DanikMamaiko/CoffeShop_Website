@@ -40,7 +40,11 @@
         }
 
         input[type="submit"],
+<<<<<<< HEAD
         input[type="button"] { /* Общий стиль для кнопок */
+=======
+        input[type="button"] {
+>>>>>>> c1b7631 (Deploy project on Docker & README)
             width: 100%;
             padding: 10px;
             background-color: #007bff;
@@ -60,6 +64,15 @@
             text-align: center;
         }
 
+<<<<<<< HEAD
+=======
+        .register-link {
+            text-align: center;
+            /* Применяем стили кнопки Login к кнопке Registration */
+            background-color: #007bff;
+            color: #ffffff;
+        }
+>>>>>>> c1b7631 (Deploy project on Docker & README)
     </style>
 </head>
 <body>
@@ -69,24 +82,32 @@
 <form th:action="@{/process-login}" method="post">
   <label for="username">Username:</label>
   <input type="text" name="username" id="username"/>
-  <br>
-  <br>
+    <br>
+    <br>
   <label for="password">Password:</label>
   <input type="password" name="password" id="password"/>
-  <br>
-  <br>
+    <br>
+    <br>
   <input type="submit" value="Login">
-  <br>
-  <br>
+    <br>
+    <br>
+  <input type="button" value="Registration" class="register-link" onclick="window.location.href='registration'" />
+    <br>
+    <br>
   <div th:if="${param.error}" class="error-message">
     Authentication Error
   </div>
+<<<<<<< HEAD
 
 
   <input type="button" value="Registration" class="register-link" onclick="window.location.href='registration'" />
 
 </form>
 
+=======
+
+</form>
+>>>>>>> c1b7631 (Deploy project on Docker & README)
 
 </body>
 </html>
