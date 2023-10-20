@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+  <form th:action="saveReservation" th:method="POST" th:object="${reservation}">
+
+<!--    <label for="id">ID:</label>-->
+<!--    <input type="text" th:fied="*{id}" id="id" />-->
+<!--    <br>-->
+
+    <label for="date">Date:</label>
+    <input type="text" th:field="*{localDate}" id="date" />
+    <br>
+
+    <label for="tableNum">Number of Table:</label>
+    <input type="text" th:field="*{tableNum}" id="tableNum" />
+    <br>
+
+    <label for="placeCount">Count of places:</label>
+    <input type="text" th:field="*{placeCount}" id="placeCount" />
+    <br>
+
+    <input type="submit" value="Забронировать стол" />
+
+  </form>
+
+</body>
+</html>
