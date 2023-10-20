@@ -1,21 +1,15 @@
 package com.dessert.project.dessert.service.impl;
 
 import com.dessert.project.dessert.DAO.ConsumerRepository;
-<<<<<<< HEAD:src/main/java/com/dessert/project/dessert/service/impl/ServiceConsumerImpl.java
 import com.dessert.project.dessert.entities.Consumers;
 import com.dessert.project.dessert.entities.Orders;
+import com.dessert.project.dessert.entities.Roles;
+import com.dessert.project.dessert.entities.UserRole;
 import com.dessert.project.dessert.service.interf.ServiceConsumerInterface;
-=======
 import com.dessert.project.dessert.DAO.RoleRepository;
 import com.dessert.project.dessert.DAO.UserRoleRepository;
-import com.dessert.project.dessert.Entities.Consumers;
-import com.dessert.project.dessert.Entities.Orders;
-import com.dessert.project.dessert.Entities.Roles;
-import com.dessert.project.dessert.Entities.UserRole;
-import com.dessert.project.dessert.Service.interf.ServiceConsumerInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
->>>>>>> b6ae9ab (Add roles):src/main/java/com/dessert/project/dessert/Service/impl/ServiceConsumerImpl.java
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

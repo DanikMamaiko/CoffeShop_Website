@@ -2,10 +2,11 @@ package com.dessert.project.dessert.service.impl;
 
 import com.dessert.project.dessert.DAO.RoleRepository;
 import com.dessert.project.dessert.DAO.UserRoleRepository;
-import com.dessert.project.dessert.Entities.UserRole;
+import com.dessert.project.dessert.entities.UserRole;
 import com.dessert.project.dessert.security.UserDetailsImpl;
 import com.dessert.project.dessert.DAO.ConsumerRepository;
 import com.dessert.project.dessert.entities.Consumers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

@@ -1,6 +1,6 @@
 package com.dessert.project.dessert.DAO;
 
-import com.dessert.project.dessert.Entities.Role;
+import com.dessert.project.dessert.entities.Role;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
