@@ -3,7 +3,13 @@ package com.dessert.project.dessert.service.impl;
 import com.dessert.project.dessert.DAO.ConsumerRepository;
 import com.dessert.project.dessert.entities.Consumers;
 import com.dessert.project.dessert.entities.Orders;
+import com.dessert.project.dessert.entities.Roles;
+import com.dessert.project.dessert.entities.UserRole;
 import com.dessert.project.dessert.service.interf.ServiceConsumerInterface;
+import com.dessert.project.dessert.DAO.RoleRepository;
+import com.dessert.project.dessert.DAO.UserRoleRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +24,15 @@ public class ServiceConsumerImpl implements ServiceConsumerInterface {
     {
         this.consumerRepository = consumerRepository;
     }
+
+    @Autowired
+    RoleRepository roleRepository;
+
+    @Autowired
+    UserRoleRepository userRoleRepository;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @Override
     @Transactional
@@ -51,7 +66,18 @@ public class ServiceConsumerImpl implements ServiceConsumerInterface {
     @Override
     @Transactional
     public void saveConsumer(Consumers consumer) {
+
+        String encodedPassword = passwordEncoder.encode(consumer.getPassword());
+        consumer.setPassword(encodedPassword);
+
         consumerRepository.save(consumer);
+
+        UserRole userRole = new UserRole();
+        userRole.setUserId(consumer.getId());
+        userRole.setRoleId(roleRepository.findByTitle(Roles.ROLE_USER.name()).get().getId());
+        userRoleRepository.save(userRole);
+
+
     }
 
     @Override

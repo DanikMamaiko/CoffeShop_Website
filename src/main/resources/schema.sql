@@ -1,5 +1,6 @@
-Drop table orders_table;
-Drop table consumers_table;
+DROP TABLE IF EXISTS orders_table;
+DROP TABLE IF EXISTS consumers_table;
+DROP TABLE IF EXISTS role_table;
 
 CREATE TABLE consumers_table (
   id int NOT NULL AUTO_INCREMENT,
@@ -21,4 +22,10 @@ CREATE TABLE orders_table (
   client_id int,
   PRIMARY KEY (id),
   FOREIGN KEY (client_id) REFERENCES consumers_table(id)
-  );
+);
+
+CREATE TABLE role_table (
+	id int NOT NULL AUTO_INCREMENT,
+	title varchar(25),
+	PRIMARY KEY (id)
+)

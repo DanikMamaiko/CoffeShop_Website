@@ -3,3 +3,6 @@ INSERT INTO consumers_table (username, password, name, surname, sex, age, phone_
 
 INSERT INTO orders_table (weight, filling, design, client_id) VALUES (2, 'Красный бархат', 'Lego', 1);
 INSERT INTO orders_table (weight, filling, design, client_id) VALUES (1.6, 'Медовик', 'С феямии', 2);
+
+INSERT INTO role_table (title) VALUES ('ROLE_ADMIN');
+INSERT INTO role_table (title) VALUES ('ROLE_USER');

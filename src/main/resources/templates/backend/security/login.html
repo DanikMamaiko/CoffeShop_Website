@@ -60,13 +60,13 @@
             text-align: center;
         }
 
-
         .register-link {
             text-align: center;
             /* Применяем стили кнопки Login к кнопке Registration */
             background-color: #007bff;
             color: #ffffff;
         }
+
     </style>
 </head>
 <body>
@@ -86,14 +86,9 @@
     <br>
     <br>
   <input type="button" value="Registration" class="register-link" onclick="window.location.href='registration'" />
-    <br>
-    <br>
-  <div th:if="${param.error}" class="error-message">
-    Authentication Error
-  </div>
-
 
 </form>
+
 
 </body>
 </html>
