@@ -62,9 +62,6 @@
 
         .register-link {
             text-align: center;
-            /* Применяем стили кнопки Login к кнопке Registration */
-            background-color: #007bff;
-            color: #ffffff;
         }
     </style>
 </head>
@@ -73,6 +70,7 @@
 <h1>Login</h1>
 
 <form th:action="@{/process-login}" method="post">
+
   <label for="username">Username:</label>
   <input type="text" name="username" id="username"/>
     <br>

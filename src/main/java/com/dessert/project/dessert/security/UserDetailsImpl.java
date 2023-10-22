@@ -1,12 +1,14 @@
 package com.dessert.project.dessert.security;
 
-import com.dessert.project.dessert.Entities.Consumers;
+import com.dessert.project.dessert.entities.Consumers;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Getter
@@ -16,7 +18,10 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return consumer.getAuthorities()
+                .stream()
+                .map(authority -> new SimpleGrantedAuthority(authority))
+                .collect(Collectors.toList());
     }
 
     @Override
