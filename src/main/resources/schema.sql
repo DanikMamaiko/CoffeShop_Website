@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS orders_table;
 DROP TABLE IF EXISTS consumers_table;
 DROP TABLE IF EXISTS role_table;
+DROP TABLE IF EXISTS user_role;
 
 CREATE TABLE consumers_table (
   id int NOT NULL AUTO_INCREMENT,
@@ -28,4 +29,11 @@ CREATE TABLE role_table (
 	id int NOT NULL AUTO_INCREMENT,
 	title varchar(25),
 	PRIMARY KEY (id)
-)
+);
+
+CREATE TABLE user_role (
+	id int NOT NULL AUTO_INCREMENT,
+	user_id int,
+	role_id int,
+	PRIMARY KEY(id)
+);
